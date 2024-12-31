@@ -99,7 +99,7 @@ def answer_question(vectorstore, query):
                               temperature=0.6)
     qa = RetrievalQA.from_chain_type(llm=llm, retriever=vectorstore.as_retriever())
     
-    answer = qa.run(query)
+    answer = qa.invoke({'query':query})
     return answer    
     
     
