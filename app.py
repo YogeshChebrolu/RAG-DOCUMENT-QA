@@ -17,7 +17,7 @@ import torch
 
 load_dotenv()
 # hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-HUGGINGFACEHUB_API_TOKEN = "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"
+HUGGINGFACEHUB_API_TOKEN = "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"
 
 def process_input(input_type, input_data):
     """Processes different input types and returns a vectorstore"""
