@@ -39,13 +39,9 @@ Make sure you have the following dependencies installed:
    pip install -r requirements.txt
    ```
 
-3. Add your Hugging Face API token to the Streamlit secrets file:
+3. Create a .env file to hold your HUGGUNIG FACE access token
 
-   - Create a `.streamlit/secrets.toml` file in the project directory.
-   - Add the following content:
-
-     ```toml
-     [secrets]
+     ```
      HUGGINGFACE_TOKEN = "your_huggingface_api_token"
      ```
 
