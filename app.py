@@ -13,6 +13,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_huggingface import HuggingFaceEndpoint 
 from dotenv import load_dotenv
+import torch
 
 load_dotenv()
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
@@ -66,8 +67,9 @@ def process_input(input_type, input_data):
     else:
         texts = text_splitter.split_text(documents)
     
+    device = 'cuda' if torch.isavailable() else 'cpu'
     model_name = "sentence-transformers/all-mpnet-base-v2"
-    model_kwargs = {'device': 'cuda'}
+    model_kwargs = {'device': device}
     encode_kwargs = {'normalize_embeddings': False}
     
     hf_embeddings = HuggingFaceEmbeddings(
