@@ -64,15 +64,6 @@ Make sure you have the following dependencies installed:
 
 5. Ask your question in the query input box and click **Submit** to get an AI-generated answer.
 
-## Project Structure
-
-```
-├── app.py               # Main Streamlit app file
-├── requirements.txt     # Python dependencies
-├── .streamlit/          # Streamlit configuration folder
-│   └── secrets.toml     # Hugging Face API token (not included in the repo)
-└── README.md            # Project documentation
-```
 
 ## Key Components
 
@@ -81,19 +72,6 @@ Make sure you have the following dependencies installed:
 - **Streamlit:** Simplifies the development of the user interface.
 - **LangChain Community:** Manages document loaders, retrievers, and chains.
 
-## Troubleshooting
-
-- **FAISS Errors:** Ensure `faiss-cpu` is installed if you're running on a CPU-only environment.
-- **CUDA Issues:** The app defaults to `cuda` if available. If running on Streamlit Cloud, ensure the device is set to `cpu`.
-- **Hugging Face Model Errors:** Verify that your API token has access to the required model.
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests for improvements.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Acknowledgments
 
