@@ -17,7 +17,7 @@ import torch
 
 load_dotenv()
 # hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-HUGGINGFACEHUB_API_TOKEN = "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"
+HUGGINGFACE_TOKEN = st.secrets["HUGGINGFACE_TOKEN"]
 
 def process_input(input_type, input_data):
     """Processes different input types and returns a vectorstore"""
@@ -99,7 +99,7 @@ def process_input(input_type, input_data):
 def answer_question(vectorstore, query):
     """Answer a question based on the provided vectorstore"""
     llm = HuggingFaceEndpoint(repo_id='meta-llama/Meta-Llama-3-8B-Instruct',
-                              model_kwargs={'token':HUGGINGFACEHUB_API_TOKEN},
+                              model_kwargs={'token':HUGGINGFACE_TOKEN},
                               temperature=0.6)
     qa = RetrievalQA.from_chain_type(llm=llm, retriever=vectorstore.as_retriever())
     
